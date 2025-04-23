@@ -4,6 +4,7 @@ export class AppConfig {
   @ApiProperty()
   awsBucket: string;
 
+  // test-comment
   @ApiProperty()
   sql: string;
 
