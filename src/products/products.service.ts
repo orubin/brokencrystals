@@ -14,14 +14,14 @@ export class ProductsService {
 
   async findAll(): Promise<Product[]> {
     this.logger.debug(`Find all products`);
-    return this.productsRepository.findAll({ orderBy: { created_at: 'desc' } });
+    return this.productsRepository.findAll({ orderBy: { createdAt: 'desc' } });
   }
 
   async findLatest(limit: number): Promise<Product[]> {
     this.logger.debug(`Find ${limit} latest products`);
     return this.productsRepository.find(
       {},
-      { limit, orderBy: { created_at: 'desc' } },
+      { limit, orderBy: { createdAt: 'desc' } },
     );
   }
 }

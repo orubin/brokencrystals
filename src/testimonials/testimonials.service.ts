@@ -25,7 +25,7 @@ export class TestimonialsService {
     title: string,
   ): Promise<Testimonial> {
     this.logger.debug(
-      `Create a testimonial. Name: ${message}, title: ${title}, message: ${message}`,
+      `Create a testimonial. Name: ${name}, title: ${title}, message: ${message}`,
     );
 
     const connection = this.em.getConnection();
@@ -56,7 +56,7 @@ export class TestimonialsService {
 
   async count(query: string): Promise<string> {
     try {
-      this.logger.debug(`Saved new testimonial`);
+      this.logger.debug(`Count testimonials`);
 
       return (await this.em.getConnection().execute(query))[0].count as string;
     } catch (err) {
